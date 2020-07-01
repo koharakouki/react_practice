@@ -24,15 +24,17 @@
 
     var counter = 0;
 
-    setInterval(() => {
+    let doAction = (event) => {
     	counter++;
     	let el = (
     		<div>
-    		  <p style={p}>count: {counter}</p>
+    		  <p onClick={doAction} style={p}>count: {counter}</p>
     		</div>
     	);
     	ReactDOM.render(el, dom);
-    }, 1000);
+    };
+
+    doAction();
 
   </script>
 </body>
