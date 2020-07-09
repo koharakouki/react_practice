@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 
 ReactDOM.render(
-  <App msg="うんこ！" />,
+  <App msg="Hi！" />,
   document.getElementById('root')
 );
 
