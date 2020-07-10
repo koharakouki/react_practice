@@ -11,16 +11,16 @@ let state_value = {
 	message: "COUNTER"
 }
 
-function counter(state = state.value, action) {
+function counter(state = state_value, action) {
 	switch (action.type) {
 		case 'INCREMENT':
 		return {
-			counter: state_value + 1,
+			counter: state.counter + 1,
 			message: 'INCREMENT'
 		};
 		case 'DECREMENT':
 		return {
-			counter: state_value - 1,
+			counter: state.counter - 1,
 			message: 'DECREMENT'
 		};
 		default:
