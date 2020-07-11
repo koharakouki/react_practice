@@ -20,7 +20,7 @@ class Item extends Component {
 	date = {
 		fontSize: "14pt",
 		backgroundColor: "white",
-		color: "white",
+		color: "darkblue",
 		padding: "5px 10px",
 		border: "1px solid lightblue",
 		width: "80px"
@@ -29,6 +29,7 @@ class Item extends Component {
 	render(){
 		let d = this.props.value.created;
 		let f = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+		// console.log(f);
 		return (
 			<tr>
 			  <th style={this.th}>No, {this.props.index}</th>
