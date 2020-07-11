@@ -44,10 +44,10 @@ const persistConfig= {
 }
 
 // パーシストレデューサーの作成
-const persistReducer = persistReducer(persistConfig, counter)
+const persistedReducer = persistReducer(persistConfig, counter)
 
 // ストア、パーシスターの作成
-let store = createStore(persistReducer)
+let store = createStore(persistedReducer)
 let pstore = persistStore(store)
 
 // 表示をレンダリング
