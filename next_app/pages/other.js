@@ -20,7 +20,7 @@ export default () =><div>
   <hr />
   <div>
     <Link href="/">
-      <a>&lt;&lt Back to Index page</a>
+      <a>&lt;&lt; Back to Index page</a>
     </Link>
   </div>
 </div>
