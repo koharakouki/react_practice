@@ -1,41 +1,62 @@
-
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import './App.css';
-import Memo from './memo/Memo';
-import AddForm from './memo/AddForm';
-import FindForm from './memo/FindForm';
-import DelForm from './memo/DelForm';
-import PersistForm from './memo/PersistForm';
+import Sampledata from './fire/SampleData';
+import firebase from "firebase";
 
+// Firebaseの設定
+var firebaseConfig = {
+  apiKey: "AIzaSyBWkYRUOfosfHzIWOx-XbGm0jfO3c42iBY",
+  authDomain: "react-202007.firebaseapp.com",
+  databaseURL: "https://react-202007.firebaseio.com",
+  projectId: "react-202007",
+  storageBucket: "react-202007.appspot.com",
+  messagingSenderId: "411488934792",
+};
+
+// Firebaseの初期化
+firebase.initializeApp(config);
 
 // Appコンポーネント
 class App extends Component {
-  td = {
-    width:"250px"
-  }
-
-
-  constructor(props){
-    super(props);
-  }
-
-  render() {
+  render(){
     return (
       <div>
-        <h1>Memo</h1>
-        <AddForm />
-        <hr />
-        <table><tbody><tr>
-          <td style={this.td}><FindForm /></td>
-          <td style={this.td}><DelForm /></td>
-          <td style={this.td}><PersistForm /></td>
-        </tr></tbody></table>
-        <Memo />
+        <h1>Fire</h1>
+        <h2>Sample data.</h2>
+        <Sampledata />
       </div>
     );
   }
 }
 
+export default App;
 
-export default connect()(App);
+
+
+
+
+
+
+// <!-- The core Firebase JS SDK is always required and must be listed first -->
+// <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+
+// <!-- TODO: Add SDKs for Firebase products that you want to use
+//      https://firebase.google.com/docs/web/setup#available-libraries -->
+// <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
+// <script>
+//   // Your web app's Firebase configuration
+//   var firebaseConfig = {
+//     apiKey: "AIzaSyBWkYRUOfosfHzIWOx-XbGm0jfO3c42iBY",
+//     authDomain: "react-202007.firebaseapp.com",
+//     databaseURL: "https://react-202007.firebaseio.com",
+//     projectId: "react-202007",
+//     storageBucket: "react-202007.appspot.com",
+//     messagingSenderId: "411488934792",
+//     appId: "1:411488934792:web:7239d28daa3c2703d2383d",
+//     measurementId: "G-2Y69G4BHXK"
+//   };
+//   // Initialize Firebase
+//   firebase.initializeApp(firebaseConfig);
+//   firebase.analytics();
+// </script>
