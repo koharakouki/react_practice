@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Sampledata from './fire/SampleData';
+import Sampledata from './fire/Sampledata';
 import firebase from "firebase";
 
 // Firebaseの設定
@@ -14,7 +14,7 @@ var firebaseConfig = {
 };
 
 // Firebaseの初期化
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 
 // Appコンポーネント
 class App extends Component {
