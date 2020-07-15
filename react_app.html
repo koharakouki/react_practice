@@ -15,22 +15,33 @@
 
     let message = "メッセージです";
 
-    const msg = {
+    const msg_true = {
       fontSize: "20pt",
       fontWeight: "bold",
       color: "red",
       border: "2px solid green"
     }
 
-    let flg = true;
+    const msg_false = {
+      fontSize: "49pt",
+      fontWeight: "bold",
+      color: "blue",
+      border: "2px solid gray"
+    }
+
+    let flg = false;
 
     let el = (
       <div>
-        {flg && <p style={msg}>{message}</p>}
+        { flg ?
+          <p style={msg_true}>{message}</p>
+        :
+          <p style={msg_false}>{message}</p>}
       </div>
     );
 
     ReactDOM.render(el, dom);
+
 
   </script>
 </body>
