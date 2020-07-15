@@ -13,30 +13,22 @@
 	<script type="text/babel">
 	  let dom = document.querySelector("#root");
 
-    let message = "メッセージです";
-
-    const msg_true = {
-      fontSize: "20pt",
-      fontWeight: "bold",
-      color: "red",
-      border: "2px solid green"
+    const list = {
+      fontSize: "18pt",
+      padding: "5px 50px"
     }
 
-    const msg_false = {
-      fontSize: "49pt",
-      fontWeight: "bold",
-      color: "blue",
-      border: "2px solid gray"
-    }
-
-    let flg = false;
+    let data = [
+      <li>One</li>,
+      <li>Two</li>,
+      <li>Three</li>,
+    ];
 
     let el = (
       <div>
-        { flg ?
-          <p style={msg_true}>{message}</p>
-        :
-          <p style={msg_false}>{message}</p>}
+        <ul style={list}>
+          {data}
+        </ul>
       </div>
     );
 
