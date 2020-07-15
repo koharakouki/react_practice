@@ -13,13 +13,17 @@
 	<script type="text/babel">
 	  let dom = document.querySelector("#root");
 
-    let message = "新しいメッセージです";
-    let link = "http://google.com";
+    let message = "メッセージです";
+
+    const msg_s = {
+      fontSize: "20pt",
+      color: "red",
+      border: "1px solid blue"
+    }
 
     let el = (
       <div>
-        <p>{message}</p>
-        <p><a href={link}>this is link!</a></p>
+        <p style={msg_s}>{message}</p>
       </div>
     );
 
