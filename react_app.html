@@ -2,7 +2,6 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8" />
-	<title>React</title>
 	<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
 	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 	<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
@@ -14,38 +13,14 @@
 	<script type="text/babel">
 	  let dom = document.querySelector("#root");
 
-    const p = {
-    	fontSize: "20pt",
-    	padding: "10px",
-    };
+    let el = (
+      <div>
+        <h2>JSX sample</h2>
+        <p>This is sample message.</p>
+      </div>
+    );
 
-    const input = {
-    	fontSize: "16pt",
-    	padding: "5px 10px",
-    }
-
-    let message = 'お名前をどうぞ：';
-    let in_val = '';
-
-    let doChange = (event) => {
-    	in_val = event.target.value;
-    	message = 'こんにちは、' + in_val + 'さん！！';
-    };
-
-    let doAction = (event) => {
-    	let el = (
-    		<div>
-    		  <p style={p}>{message}</p>
-    		  <div>
-    		    <input type="text" id="input" style={input} onChange={doChange} />
-    		    <button onClick={doAction} style={input}>Click</button>
-    		  </div>
-    		</div>
-      );
-      ReactDOM.render(el, dom);
-    };
-
-    doAction();
+    ReactDOM.render(el, dom);
 
   </script>
 </body>
