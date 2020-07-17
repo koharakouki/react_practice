@@ -1,65 +1,74 @@
 import React, { Component } from 'react';
-import Rect from './Rect';
+import { connect } from 'react-redux';
 import './App.css';
 
-
-let theme = {
-  light: {
-    backgroundColor: "#eef",
-    color: "#006",
-    padding: "10px"
-  },
-  dark: {
-    backgroundColor: "#006",
-    color: "#eef",
-    padding: "10px"
-  }
-};
-
-let content = {
-  title: "context",
-  message: "This is samaple context"
+function mappingState(state){
+  return state;
 }
 
-const ThemeContext = React.createContext(theme.light);
-const contentContext = React.createContext(content);
-
-
 class App extends Component {
-  static contextType = ThemeContext;
+  constructor(props){
+    super(props);
+  }
 
   render(){
     return(
-      <div style={this.context}>
-        <Title value="Content page" />
-        <Message value="This is samaple Content" />
+      <div>
+        <h1>Redux</h1>
+        <Message />
+        <Button />
       </div>
     );
   }
 }
 
-class Title extends Component {
-  static contextType = ThemeContext;
-  static contextType = contentContext;
+App = connect()(App);
+
+class Message extends Component {
+  style = {
+    fontSize: "20pt",
+    padding: "20px 5px"
+  }
 
   render(){
     return(
-      <h2 style={this.context}>{this.context.title}</h2>
+      <p style={this.style}>
+        {this.props.message}: {this.props.counter}
+      </p>
     );
   }
 }
 
+Message = connect(mappingState)(Message);
 
-class Message extends Component {
-  static contextType = ThemeContext;
-  static contextType = contentContext;
+class Button extends Component {
+  style = {
+    fontSize: "16pt",
+    padding: "5px 10px"
+  }
 
-    render(){
+  constructor(props){
+    super(props);
+    this.doAction = this.doAction.bind(this);
+  }
+
+  doAction(e){
+    if(e.shiftKey){
+      this.props.dispatch({ type: 'INCREMENT' });
+    } else {
+      this.props.dispatch({ type: 'DECREMENT' });
+    }
+  }
+
+  render(){
     return(
-      <p style={this.context}>{this.context.message}</p>
+      <button style={this.style} onClick={this.doAction}>
+        Click
+      </button>
     );
   }
 }
 
+Button = connect()(Button);
 
 export default App;
