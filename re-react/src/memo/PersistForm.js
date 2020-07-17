@@ -38,7 +38,7 @@ class PersistForm extends Component {
   	return(
   		<div>
   		  <label style={this.label}>
-	  		  <input tyle="checkbox" id="check" size="40" onChange={this.doChange} style={this.check} checked={this.state.check} />
+	  		  <input type="checkbox" id="check" size="40" onChange={this.doChange} style={this.check} checked={this.state.check} />
   		    Persist
   		  </label>
   		</div>
