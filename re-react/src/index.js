@@ -22,7 +22,7 @@ let pstore = persistStore(store);
 
 ReactDOM.render(
 	<Provider store={store}>
-	  <PersistGate loading={<p>loading...</p>} persitor={pstore}>
+	  <PersistGate loading={<p>loading...</p>} persistor={pstore}>
 	    <App />
 	  </PersistGate>
 	</Provider>,
