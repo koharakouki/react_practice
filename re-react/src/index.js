@@ -12,7 +12,9 @@ import MemoStore, { memoReducer } from './memo/Store';
 // Redux Persist
 const persistConfig = {
 	key: 'memo',
-	storage
+	storage: storage,
+	blacklist: ['message', 'mode', 'fdata'],
+	whitelist: ['data']
 }
 
 const persistedReducer = persistReducer(persistConfig, memoReducer);
